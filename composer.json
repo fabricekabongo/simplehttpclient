@@ -1,0 +1,19 @@
+{
+  "name": "fabricekabongo/simplehttpclient",
+  "description": "A very simple Http Client that works on PHP 5.3",
+  "type": "library",
+  "license": "MIT",
+  "version": "0.1.0",
+  "authors": [
+    {
+      "name": "Fabrice Kabongo",
+      "email": "fabrice.k.kabongo@gmail.com"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "FabriceKabongo\\Http\\": "src/FabriceKabongo/Http/"
+    }
+  }
+}
