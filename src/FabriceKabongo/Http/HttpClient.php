@@ -43,6 +43,33 @@ class HttpClient
     }
 
     /**
+     * Does a delete request to the url provided.
+     *
+     * @todo handle file uplaod
+     * @todo handle request content
+     *
+     * @param $url
+     * @param array $postData
+     *
+     * @return mixed
+     */
+    public function delete($url, $postData = array())
+    {
+        $postData = $this->convertArrayToQueryString($postData);
+
+        $resource = $this->prepareQuery($url);
+
+        curl_setopt($resource, CURLOPT_CUSTOMREQUEST, "DELETE");
+        curl_setopt($resource, CURLOPT_POSTFIELDS, $postData);
+
+        $result = curl_exec($resource);
+
+        curl_close($resource);
+
+        return $result;
+    }
+
+    /**
      * Does a get request to the url provided
      *
      * @param $url
